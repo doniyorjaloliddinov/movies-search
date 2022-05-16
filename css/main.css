@@ -1,0 +1,25 @@
+.site-wrapper {
+    background-color: #16151A;
+}
+
+.movies-items {
+    font-weight: bold;
+    padding: 15px;
+    padding-top: 45px;
+    border-radius: 45px;
+    color: #ffffff;
+}
+
+.movies-img {
+    width: 150px;
+    height: 130px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.movies-price {
+    margin-left: 70px;
+    text-decoration: line-through;
+}
+
