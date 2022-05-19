@@ -1,15 +1,17 @@
 .site-wrapper {
-    background-color: #16151A;
+    background-color: #00aef2;
 }
 
 .movies-items {
-    height: 450px;
+    margin-left: 1px;
+    height: 400px;
     font-weight: bold;
     padding: 15px;
     padding-top: 45px;
     border-radius: 45px;
     color: #ffffff;
     overflow: auto;
+    border: 3px solid rgb(246, 255, 0);
 }
 
 .movies-img {
