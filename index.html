@@ -12,17 +12,26 @@
 
     <div class="site-wrapper">
         <div class="container">
-            <h2 class="sitemain-heading">Movies</h2>
-            <input class="js-search " type="search">
-            <button class="search-btn">Search</button>
-            <h3 class="movies-heading">Movies on trend</h3>
+            <h2 class="sitemain-heading text-center text-light">Movies</h2>
+
+            <form class="js-search-form " action="https://echo.htmlacademy.ru/" method="POST">
+                    <input class="js-search d-block m-auto mt-3" id="search-input" type="search" placeholder="Write movie name" aria-label="movies search">
+            </form>
+
+            <h3 class="movies-heading text-center mt-3 text-light">Movies on trend</h3>
             <ul class="movies-list list-unstyled d-flex flex-wrap justify-content-between">
             </ul>
+            <!-- <ul class="js-list"></ul> -->
         </div>
     </div>
 
 
 
+    <template id="template">
+        <h2 class="title-movie">Lorem, ipsum dolor.</h2>
+        <p class="movie-premier">Lorem, ipsum dolor.</p>
+        <p class="movie-info">Lorem ipsum dolor sit amet.</p>
+    </template>
 
     <!-- <div class="container">
         <h2 class="h1 text-center">Movies by Doni Platform</h2>

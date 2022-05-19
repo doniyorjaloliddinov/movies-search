@@ -1,7 +1,9 @@
 // VARIABLES
-let elSearchInput = selectorElem(".selectorElem");
+let elSearchInput = selectorElem(".js-search");
 let elSearchBtn = selectorElem(".search-btn");
 let elReadyList = selectorElem(".movies-list");
+// let elTest = selectorElem(".js-list");
+
 
 // FUNCTION READY LIST
 let readyList = function () {
@@ -42,19 +44,24 @@ readyList();
 elSearchBtn.addEventListener("click", function() {
     let films = [];
     let searchingValue = elSearchInput.value.trim();
+    elTest.value = readyList()
+    let elTestItem = createElem("li");
 
     let searchRegex = new RegExp(searchingValue, "gi");
     
     kinolar.forEach((kino) => {
+        elTest.append(elTestItem);
         if (kino.title.match(searchRegex)) {
-            films.push(kino);
-            console.log(films);
+            // films.push(kino);
+            // films.push(elTest)
+            // elTest.innerHtml = elTest
+
         }
         // else {
-            // console.log("No suckh kind of movie");
+        //     console.log("No suckh kind of movie");
         // }
     })
-    // return
-    // console.log(films);
+    // return kinolar
     console.log(films);
 })
+// console.log(films);
