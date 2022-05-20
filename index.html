@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John TV</title>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper p-4">
         <div class="container">
             <h2 class="sitemain-heading text-center text-light">Movies</h2>
 
             <form class="js-search-form " action="https://echo.htmlacademy.ru/" method="POST">
-                    <input class="js-search d-block m-auto mt-3" id="search-input" type="search" placeholder="Write movie name" aria-label="movies search">
+                <input class="js-search-input d-block m-auto mt-3" id="search-input" type="search"
+                    placeholder="Write movie name" aria-label="movies search">
             </form>
 
             <h3 class="movies-heading text-center mt-3 text-light">Movies on trend</h3>
@@ -28,48 +31,17 @@
 
 
     <template id="template">
-        <h2 class="title-movie">Lorem, ipsum dolor.</h2>
-        <p class="movie-premier">Lorem, ipsum dolor.</p>
-        <p class="movie-info">Lorem ipsum dolor sit amet.</p>
+        <li class="js-ready-item ready-item">
+            <h2 class="js-title-movie m-0 text-light">Lorem, ipsum dolor.</h2>
+            <p class="js-movie-premier m-0 text-light fw-bold">Lorem, ipsum dolor.</p>
+            <p class="movie-cast m-0 text-light fw-bold">Lorem ipsum dolor sit amet.</p>
+            <p class="movie-genres m-0 text-light fw-bold">Lorem, ipsum.</p>
+        </li>
     </template>
-
-    <!-- <div class="container">
-        <h2 class="h1 text-center">Movies by Doni Platform</h2>
-        <h3 class="h2 mt-3 text-center">Soap opera</h3>
-        <div class="soapopera-wrapper d-flex align-items-center justify-content-between">
-            <button><</button>
-            <ul class="saopopera-list list-unstyled d-flex align-items-center justify-content-between flex-wrap">
-                <li class="saopopera-items mt-3">
-                    <img class="d-block m-auto" src="./img/noway-home.jfif" alt="movie 'no way home' " width="150" height="120">
-                    <h4 class="h4 text-center">No way home</h4>
-                    <p class="movie-description text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dignissimos suscipit eius.</p>
-                    <span class="movies-price text-center">45<sup>$</sup></span>
-                    <span class="movies-newprice text-center"> - 25<sup>$</sup></span>
-                </li>
-                <li class="saopopera-items mt-3">
-                    <img class="d-block m-auto" src="./img/noway-home.jfif" alt="movie 'no way home' " width="150" height="120">
-                    <h4 class="h4 text-center">No way home</h4>
-                    <p class="movie-description text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dignissimos suscipit eius.</p>
-                    <span class="movies-price text-center">45<sup>$</sup></span>
-                    <span class="movies-newprice text-center"> - 25<sup>$</sup></span>
-                </li>
-
-                <li class="saopopera-items mt-3">
-                    <img class="d-block m-auto" src="./img/noway-home.jfif" alt="movie 'no way home' " width="150" height="120">
-                    <h4 class="h4 text-center">No way home</h4>
-                    <p class="movie-description text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dignissimos suscipit eius.</p>
-                    <span class="movies-price text-center">45<sup>$</sup></span>
-                    <span class="movies-newprice text-center"> - 25<sup>$</sup></span>
-                </li>
-            
-                
-            </ul>
-            <button>></button>
-        </div>
-    </div> -->
 
     <script src="./js/movies.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/script.js"></script>
 </body>
+
 </html>

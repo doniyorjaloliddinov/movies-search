@@ -1,28 +1,56 @@
 // VARIABLES
-let elSearchInput = selectorElem(".js-search");
-let elSearchBtn = selectorElem(".search-btn");
-let elReadyList = selectorElem(".movies-list");
-let elTemplate = selectorElem("#template").content;
+let elSearchForm = $(".js-search-form");
+let elSearchInput = $(".js-search-input", elSearchForm);
+let elReadyList = $(".movies-list");
+let elTemplate = $("#template").content;
 
-// FUNCTION READY LIST
-let readyList = function () {
-    kinolar.forEach(kino => {
-        kinolar.splice(100);
-        let elItems = createElem("li", "", "movies-items w-25 my-3");
+kinolar.splice(100);
 
-        let elImg = createElem("img", "", "movies-img");
-        elImg.src = "./img/noway-home.jfif";
+let normalizedMovies = kinolar.map((kino, i) => {
+    return {
+        id: i + 1,
+        title: kino.title,
+        cast: kino.cast.splice(0, 8).join(", "),
+        genres: kino.genres.join(", "),
+        year: kino.year,
+    }
+})
 
-        let elTitle = createElem("p", `Title: ${kino.title}`, "movies-name t-center text-center");
+let readyItems = function (kino) {
+    elReadyList.innerHTML = "";
 
-        let elYear = createElem("p", `Year of premiere: ${kino.year}`, "movies-year t-center text-center");
+    let elReadyItem = elTemplate.cloneNode(true);
 
-        let elActors = createElem("p", `Actors: ${kino.cast.splice(0,5).join(",   ")}`, "movies-actors t-center text-center");
+    $(".js-title-movie", elReadyItem).textContent = kino.title;
+    $(".js-movie-premier", elReadyItem).textContent = kino.year;
+    $(".movie-cast", elReadyItem).textContent = kino.cast;
+    $(".movie-genres", elReadyItem).textContent = kino.genres;
 
-        elItems.append(elImg, elTitle, elYear, elActors);
-        elReadyList.append(elItems);
-        // return elItems;
-
-    });
+    return elReadyItem;
 }
-readyList();
+
+let renderElements = function (kinolar) {
+    let elMoviesWrapperFragment = document.createDocumentFragment();
+
+    kinolar.forEach(function (kino) {
+        elMoviesWrapperFragment.appendChild(readyItems(kino));
+    });
+
+    elReadyList.appendChild(elMoviesWrapperFragment);
+}
+renderElements(normalizedMovies);
+
+elSearchForm.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+
+    let searchMovie = new RegExp(elSearchInput.value.trim(), "gi");
+
+    let searchResult = normalizedMovies.filter((movie) => {
+        if (movie.title.match(searchMovie)) {
+            return movie.title.match(searchMovie);
+        }
+    })
+    
+    renderElements(searchResult);
+    // console.log(renderElements(searchResult));
+})

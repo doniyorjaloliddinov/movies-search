@@ -1,14 +1,17 @@
-// SELECTOR FUNCTION
-let selectorElem = function (selector, node = document) {
+// Function for query to element
+let $ = function (selector, node = document) {
     return node.querySelector(selector);
 }
 
-// CREATE ELEMENT FUNCTION 
-let createElem = function(elementName, textCont, classNam, href, src) {
-    let element =  document.createElement(elementName);
-    element.textContent = textCont;
-    element.className = classNam;
-    element.href = href;
-    element.src = src;
+// Function for create element
+let createElement = function (tagName, className, text) {
+    let element = document.createElement(tagName);
+    if (className) {
+        element.setAttribute("class", className);
+    }
+    if (text) {
+        element.textContent = text;
+    }
+
     return element;
 }

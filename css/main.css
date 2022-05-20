@@ -26,4 +26,20 @@
     margin-left: 70px;
     text-decoration: line-through;
 }
+.ready-item {
+    width: 250px;
+    height: 350px;
+    padding: 25px;
+    margin-top: 15px;
+    background-color: rgb(47, 234, 255);
+    overflow: auto;
+    border: 2px solid rgb(229, 255, 0);
+    border-radius: 45px;
+}
 
+.ready-item:hover {
+    cursor: pointer;
+    transform: scale(0.8);
+    transition: ease 0.5s;
+    background-color: rgb(246, 246, 54);
+}
